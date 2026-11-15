@@ -37,7 +37,7 @@
     var preview = document.querySelector('#asdndz-image_image')
 
     reader.onload = function(e) {
-      preview.style.backgroundImage = `url(${e.srcElement.result})`
+      preview.style.backgroundImage = "url(" + e.target.result + ")"
     }
 
     field.addEventListener('dnd-upload:initialize', function(e) {
@@ -45,7 +45,7 @@
     }, false)
 
     form.addEventListener('click', function(e) {
-      if (event.target.dataset.dndDelete === 'true') {
+      if (e.target.dataset.dndDelete === 'true') {
         preview.style.backgroundImage = ''
       }
     }, true)

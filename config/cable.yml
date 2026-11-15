@@ -1,3 +1,6 @@
+# This app does not define any Action Cable channels. The previous production
+# entry pointed at Redis, but the redis gem was not installed, so that adapter
+# could not connect. The async adapter needs no extra service.
 development:
   adapter: async
 
@@ -5,6 +8,4 @@ test:
   adapter: test
 
 production:
-  adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
-  channel_prefix: instaton_production
+  adapter: async

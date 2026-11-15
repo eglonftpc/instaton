@@ -4,13 +4,17 @@
   <div class="col-md-9">
     <div class="card">
       <div class="card-body p-2">
-        <%= image_tag @image.image, class: 'd-block w-100' %>
+        <% if @image.image.attached? %>
+          <%= image_tag @image.image, class: 'd-block w-100' %>
+        <% else %>
+          <p class="text-muted mb-0">No image file is attached to this post.</p>
+        <% end %>
       </div>
     </div>
   </div>
 
   <div class="col-md-3">
-    <%= link_to @image.user.full_name, profile_path(@image.user.username) %>
+    <%= @image.user.full_name %>
 
     <p class="border-top mt-3 py-2">
       <% if @image.description.present? %>

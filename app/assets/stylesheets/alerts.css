@@ -25,3 +25,10 @@
     color: #468847;
     text-align: left;
  }
+
+button.nav-link {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+}
