@@ -5,7 +5,9 @@
  <% @images.each do |image| %>
    <div class="card">
      <div class="card-body p-1">
-       <%= image_tag image.image, class: 'd-block w-100' %>
+       <% if image.image.attached? %>
+         <%= image_tag image.image, class: 'd-block w-100' %>
+       <% end %>
 
        <p class="my-1"><%= image.description %></p>
 
